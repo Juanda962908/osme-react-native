@@ -5,7 +5,15 @@ import { Icon } from 'react-native-elements';
 
 
 const Body = ({useCases}) => {
-    const {products, loadNextPageFn, handleScroll, query, handleSearch, filteredData, handleSearchEnd} = useBodyController(useCases);
+    const {
+        products,
+        loadNextPageFn,
+        handleScroll,
+        query,
+        handleSearch,
+        filteredData,
+        handleSearchEnd
+    } = useBodyController(useCases);
     const renderItem = ({item, index}) => {
         return (
             <View style={styles.item}>
@@ -23,14 +31,13 @@ const Body = ({useCases}) => {
     return (
         <SafeAreaView style={styles.container}>
             <View>
-
-            <TextInput
-                style={styles.input}
-                placeholder="Buscar el nombre de tu chiqui"
-                value={query}
-                onChangeText={handleSearch}
-                onBlur={handleSearchEnd}
-            />
+                <TextInput
+                    style={styles.input}
+                    placeholder="Buscar el nombre de tu chiqui"
+                    value={query}
+                    onChangeText={handleSearch}
+                    onBlur={handleSearchEnd}
+                />
                 <Icon
                     name="search"
                     color="red"
@@ -91,7 +98,7 @@ const styles = StyleSheet.create({
         backgroundColor: '#fff',
         borderWidth: 1,
         borderColor: '#9c27b0',
-        marginHorizontal:10
+        marginHorizontal: 10
     },
     searchIcon: {
         position: 'absolute',
